@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafif Irdian, Data &amp; Systems Analyst</title>
+<meta name="description" content="Portfolio of Rafif Irdian, data and systems analyst. Data migration, SQL, pipelines and web application development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEFEA;
+    --paper-2:#F6F7F3;
+    --ink:#151C19;
+    --ink-soft:#4A5551;
+    --pine:#1D5645;
+    --amber:#B8860B;
+    --rule:#C9CEC6;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--pine);text-decoration:none;border-bottom:1px solid rgba(29,86,69,.35)}
+  a:hover{border-bottom-color:var(--pine)}
+  a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- header ---------- */
+  header{padding:72px 0 40px;border-bottom:1px solid var(--rule)}
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;
+    font-size:clamp(38px,7vw,66px);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:14px 0 0;
+  }
+  .tagline{
+    font-size:clamp(18px,2.4vw,22px);
+    max-width:34em;margin:18px 0 0;color:var(--ink-soft);
+  }
+  /* signature: record strip */
+  .record{
+    margin-top:34px;
+    border:1px solid var(--rule);
+    background:var(--paper-2);
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .record-row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    border-bottom:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+  }
+  .record-row:last-child{border-bottom:0}
+  .record-row dt{
+    padding:9px 14px;
+    color:var(--ink-soft);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    font-size:11.5px;
+    border-right:1px solid var(--rule);
+    background:rgba(29,86,69,.045);
+    align-self:stretch;
+  }
+  .record-row dd{margin:0;padding:9px 14px}
+  .record dl{margin:0}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0;border-bottom:1px solid var(--rule)}
+  h2{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:26px;letter-spacing:-.01em;
+    margin:10px 0 28px;
+  }
+  h3{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:21px;letter-spacing:-.01em;margin:0;
+  }
+  p{margin:0 0 14px}
+  p:last-child{margin-bottom:0}
+
+  /* ---------- project ---------- */
+  .project{
+    padding:26px 0 30px;
+    border-top:1px solid var(--rule);
+  }
+  .project:first-of-type{border-top:0;padding-top:0}
+  .project-head{
+    display:flex;flex-wrap:wrap;gap:10px 16px;
+    align-items:baseline;justify-content:space-between;
+    margin-bottom:6px;
+  }
+  .project-body{margin-top:14px;max-width:62ch}
+  .col-main .fields{margin-top:0}
+  .fields{
+    margin:16px 0 0;
+    font-family:"IBM Plex Mono",monospace;font-size:13.5px;
+    border-left:2px solid var(--pine);padding-left:14px;
+  }
+  .field{display:grid;grid-template-columns:92px 1fr;gap:8px;padding:2px 0}
+  .field span:first-child{color:var(--ink-soft);text-transform:uppercase;font-size:11.5px;letter-spacing:.05em;padding-top:2px}
+  .links{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;
+    border:1px solid var(--pine);border-radius:2px;
+    padding:7px 13px;color:var(--pine);background:transparent;
+    display:inline-block;
+  }
+  .btn:hover{background:var(--pine);color:var(--paper-2)}
+  .btn-quiet{border-color:var(--rule);color:var(--ink-soft)}
+  .btn-quiet:hover{background:var(--ink-soft);color:var(--paper-2)}
+
+  /* checks: the signature detail */
+  .checks{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+  .checks li{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;
+    border:1px solid var(--rule);border-radius:2px;
+    padding:4px 9px 4px 8px;background:var(--paper-2);color:var(--ink-soft);
+  }
+  .checks li::before{
+    content:"\2713";color:var(--amber);margin-right:7px;font-weight:700;
+  }
+
+  .project-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    gap:30px;
+    align-items:start;
+    margin-top:16px;
+  }
+  .col-main{min-width:0}
+  .col-side{min-width:0}
+  @media (max-width:820px){
+    .project-grid{grid-template-columns:1fr;gap:18px}
+  }
+  .shot{
+    margin:0;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    overflow:hidden;
+    background:var(--paper-2);
+    line-height:0;
+  }
+  .shot img{width:100%;height:auto;display:block}
+  .shot figcaption{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;line-height:1.5;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);
+    padding:8px 12px;border-top:1px solid var(--rule);
+  }
+
+  .lede{max-width:60ch;font-size:18px}
+
+  /* ---------- contact ---------- */
+  footer{padding:52px 0 76px}
+  .contact-list{
+    margin:20px 0 0;padding:0;list-style:none;
+    font-family:"IBM Plex Mono",monospace;font-size:14.5px;
+    display:grid;gap:8px;
+  }
+  .note{margin-top:34px;font-size:14px;color:var(--ink-soft);max-width:52ch}
+
+  @media (max-width:620px){
+    body{font-size:16px}
+    header{padding:48px 0 32px}
+    .record-row{grid-template-columns:112px 1fr}
+    .field{grid-template-columns:80px 1fr}
+  }
+
+  /* motion */
+  .reveal{opacity:0;transform:translateY(10px)}
+  .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.reveal.in{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Data &amp; Systems Analyst, New Zealand</p>
+    <h1>Rafif Irdian</h1>
+    <p class="tagline">I move data between systems without losing it, and I keep the receipts. Migration, SQL, pipelines, and the web applications sitting on top of them.</p>
+
+    <div class="record">
+      <dl>
+        <div class="record-row"><dt>Based in</dt><dd>New Zealand, open to relocation</dd></div>
+        <div class="record-row"><dt>Work rights</dt><dd>Full open work rights, Post Study Work Visa</dd></div>
+        <div class="record-row"><dt>Available</dt><dd>Immediately</dd></div>
+        <div class="record-row"><dt>Education</dt><dd>Master of Information Technology, University of Auckland</dd></div>
+        <div class="record-row"><dt>Experience</dt><dd>2+ years, Johnson &amp; Johnson Medtech and Indonesian Embassy Abu Dhabi</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<section class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">How I work</p>
+    <h2>Validation is the work, not the afterthought</h2>
+    <p class="lede">Anyone can produce a number. The part that matters is knowing whether it survives contact with reality, so most of what follows is about the checks rather than the output. Below is what I actually ran on these projects.</p>
+    <ul class="checks">
+      <li>Train and test split</li>
+      <li>Walk-forward validation</li>
+      <li>Cross-asset robustness</li>
+      <li>Survivorship bias test</li>
+      <li>Reconciliation across parallel environments</li>
+      <li>Figures independently recomputed before publishing</li>
+      <li>Read-only guard tested with destructive statements</li>
+      <li>Quality flags instead of silent deletions</li>
+    </ul>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Projects</h2>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>Ticket Analytics Pipeline &amp; Natural-Language SQL Agent</h3>
+        <span class="mono eyebrow">Jul 2026</span>
+      </div>
+      <div class="project-grid">
+        <div class="col-main">
+      <div class="fields">
+        <div class="field"><span>Stack</span><span>Python, pandas, DuckDB, SQL, Power BI, Streamlit</span></div>
+        <div class="field"><span>Type</span><span>Independent project</span></div>
+        <div class="field"><span>Data</span><span>100,000 rows, deliberately dirty</span></div>
+      </div>
+      <div class="project-body">
+        <p>An unfamiliar operational dataset with quality problems built into it, taken from raw file to trustworthy reporting layer. The cleaning runs across five notebooks: profiling, validation rules, category standardisation mapping 32 inconsistent values down to 10, and quality flags rather than silent deletions, with every decision written down so someone else can disagree with it.</p>
+        <p>The cleaned output is modelled into a star schema and written to parquet, then surfaced through Power BI where every headline figure was independently recomputed in pandas before being trusted. On top sits an agent that answers plain-English questions by generating and executing real SQL against DuckDB, behind a SELECT-only guard that was tested by firing destructive statements at it before the model was ever connected.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/rafif-212/Ticket-analytics-pipeline">View the code</a>
+      </div>
+        </div>
+        <div class="col-side">
+      <figure class="shot">
+        <img src="img/ticket-analytics-dashboard.png" alt="Power BI overview page, with the data coverage gap flagged rather than hidden" loading="lazy">
+        <figcaption>Power BI overview page, with the data coverage gap flagged rather than hidden</figcaption>
+      </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>Market Signal &amp; Paper-Trading Tool</h3>
+        <span class="mono eyebrow">2026</span>
+      </div>
+      <div class="project-grid">
+        <div class="col-main">
+      <div class="fields">
+        <div class="field"><span>Stack</span><span>Python, pandas, Streamlit, Binance public API, VADER</span></div>
+        <div class="field"><span>Type</span><span>Independent project</span></div>
+        <div class="field"><span>Code</span><span>Public repository</span></div>
+      </div>
+      <div class="project-body">
+        <p>A signal engine and autonomous paper-trading bot, from live market data through to simulated execution on a testnet. Indicators are computed from scratch rather than pulled from a library: MACD, RSI, Bollinger Bands, moving averages, and a 200-period trend regime, combined into a transparent verdict that states its own reasons. News headlines are scored for sentiment as a secondary input.</p>
+        <p>The interesting half is the validation. The strategy is put through a train and test split, walk-forward validation, cross-asset robustness testing, and a survivorship-bias check against a coin that collapsed. The honest conclusion the project reaches is that disciplined risk management holds up and prediction does not, which is the opposite of what a project like this usually claims.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/rafif-212/market-signal-tool-prototype">View the code</a>
+      </div>
+        </div>
+        <div class="col-side">
+      <figure class="shot">
+        <img src="img/market-signal-dashboard.png" alt="Live signal view, showing the reasoning behind each verdict" loading="lazy">
+        <figcaption>Live signal view, showing the reasoning behind each verdict</figcaption>
+      </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>TestSphere AI, AI-assisted software test platform</h3>
+        <span class="mono eyebrow">Nov 2025 to Mar 2026</span>
+      </div>
+      <div class="project-grid">
+        <div class="col-main">
+      <div class="fields">
+        <div class="field"><span>Stack</span><span>React, Flask, PostgreSQL, Docker, AWS ECS, GitHub Actions</span></div>
+        <div class="field"><span>Type</span><span>University of Auckland industry project with CyberCX</span></div>
+        <div class="field"><span>Role</span><span>Frontend developer, team of five</span></div>
+      </div>
+      <div class="project-body">
+        <p>A human-in-the-loop test case generation platform, delivered across four agile sprints to a real industry partner's requirements. I built the React frontend, implemented GitHub OAuth alongside Google authentication, and developed JUnit XML export so generated tests drop into an existing CI/CD pipeline, plus PDF export, theming, and project management features.</p>
+        <p>Deployed in containers on AWS with builds automated through GitHub Actions. The work that shaped the product most was the fortnightly back and forth with CyberCX mentors about what the tool actually needed to do.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/rafif-212/TestSphere-AI">View the code</a>
+      </div>
+        </div>
+        <div class="col-side">
+      <figure class="shot">
+        <img src="img/testsphere-dashboard.png" alt="TestSphere AI project dashboard, pass and fail activity across generated tests" loading="lazy">
+        <figcaption>TestSphere AI project dashboard, pass and fail activity across generated tests</figcaption>
+      </figure>
+        </div>
+      </div>
+    </article>
+
+
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">Before the projects</p>
+    <h2>Where this came from</h2>
+    <p class="lede">At Johnson &amp; Johnson Medtech I led the data migration and reconciliation work through the Kenvue company separation, mapping and validating commercial data across two live environments while reporting stayed up for five Southeast Asian markets. At the Indonesian Embassy in Abu Dhabi I handled sensitive personal records under strict access control, and ran IT support for staff at every technical level. Both jobs taught the same lesson the projects above keep repeating: the number is easy, the assurance is the job.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">Verified</p>
+    <h2>Credentials</h2>
+    <p class="lede">Certifications are exams passed or assessed programmes completed. Training and events are listed separately and honestly, because the difference matters.</p>
+
+    <div class="record" style="margin-top:26px">
+      <dl>
+        <div class="record-row"><dt>Certification</dt><dd>FORESEC Certified in Networking Security (FCNS), exam passed with grade A, 2018</dd></div>
+        <div class="record-row"><dt>Certification</dt><dd>IBM Data Science Practitioner Certificate, IBM Skills Academy, 2021</dd></div>
+        <div class="record-row"><dt>Programme</dt><dd>Digital Talent Scholarship (Kominfo), Data Science, 210 hours, 2020</dd></div>
+        <div class="record-row"><dt>Programme</dt><dd>Digital Talent Scholarship (Kominfo), Android Developer with Kotlin, 97 hours, 2021</dd></div>
+        <div class="record-row"><dt>Language</dt><dd>Russian language course, Russian Centre of Science and Culture Jakarta, 144 hours, 2015</dd></div>
+        <div class="record-row"><dt>Event</dt><dd>Snowflake Discover AI, attended July 2026</dd></div>
+      </dl>
+    </div>
+
+    <div class="links" style="margin-top:22px">
+      <a class="btn" href="Rafif_Irdian_Certificates.pdf">View all certificates (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:rafif.muhammad212@gmail.com">rafif.muhammad212@gmail.com</a></li>
+      <li><a href="tel:+64225002692">+64 22 500 2692</a></li>
+      <li><a href="https://github.com/rafif-212">github.com/rafif-212</a></li>
+    </ul>
+    <p class="note">Full CV available on request, or attached to the application that brought you here.</p>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
