@@ -238,6 +238,36 @@
 
     <article class="project">
       <div class="project-head">
+        <h3>NZ Growing-Season Climate &amp; Kiwifruit Yield</h3>
+        <span class="mono eyebrow">Aug 2026</span>
+      </div>
+      <div class="project-grid">
+        <div class="col-main">
+      <div class="fields">
+        <div class="field"><span>Stack</span><span>Python, pandas, pdfplumber, scipy, matplotlib, pytest</span></div>
+        <div class="field"><span>Type</span><span>Independent project</span></div>
+        <div class="field"><span>Scope</span><span>Ten districts, six seasons, 38 features</span></div>
+      </div>
+      <div class="project-body">
+        <p>Does growing-season weather track kiwifruit yield? Getting to an answer meant building the dataset first: five sources, including annual report PDFs whose table layouts change between editions, and reconciling two publishers against each other. That reconciliation surfaced a defect in an official published source, where three seasons of yield figures had been printed in the hectares row. The check that catches it is a validation rule, so a repeat is caught without a code change.</p>
+        <p>Every feature's variance is split between seasons, districts and residual before anything is fitted, and that table decides what may be asked. Winter chill is absent from the results because 69 to 83 percent of its variance sits between districts, so it cannot be separated from everything else that differs between districts. The code refuses to test it rather than printing a number someone would read as an association.</p>
+        <p>One association holds: wetter fruit-fill periods go with lower yield, r of -0.91 and -0.95, still substantial after dropping the most influential season. It does not survive correction for the 38 features tested, and the write-up says so. A pre-committed hypothesis came out backwards, and that is reported too. 122 tests, and the pipeline runs top to bottom from a clean checkout.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/rafif-212/Kiwifruit-climate-analysis">View the code</a>
+      </div>
+        </div>
+        <div class="col-side">
+      <figure class="shot">
+        <img src="img/kiwifruit-rainfall-yield.png" alt="Wetter fruit-fill periods coincide with lower yield" loading="lazy">
+        <figcaption>The one association that holds, with its own caveats printed on the chart</figcaption>
+      </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
         <h3>Ticket Analytics Pipeline &amp; Natural-Language SQL Agent</h3>
         <span class="mono eyebrow">Jul 2026</span>
       </div>
